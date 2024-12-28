@@ -10,11 +10,17 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Additional packages
+  # Работа с базой данных SQLite
   sqflite: ^2.2.0
+  
   path_provider: ^2.0.14
+  
   provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter:
+  assets:
+    - assets/words.json 
