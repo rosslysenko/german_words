@@ -73,8 +73,8 @@ class _WordsScreenState extends State<WordsScreen> {
   // Add a new word (for testing)
   Future<void> _addWord() async {
     final dbService = DatabaseService();
-    final newWord = Word(german: 'das Haus', translation: 'House');
-    await dbService.insertWord(newWord.toMap());
+    final newWord = Word(id: 0, german: 'das Haus', translation: 'House');
+    await dbService.insertWord(newWord);
     _loadWords();
   }
 }
