@@ -53,7 +53,7 @@ class _WordsScreenState extends State<WordsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Список слов'),
+        title: Text('Word list'),
       ),
       body: _words.isEmpty
           ? Center(child: CircularProgressIndicator())
@@ -73,7 +73,7 @@ class _WordsScreenState extends State<WordsScreen> {
   // Add a new word (for testing)
   Future<void> _addWord() async {
     final dbService = DatabaseService();
-    final newWord = Word(german: 'Haus', translation: 'Дом');
+    final newWord = Word(german: 'das Haus', translation: 'House');
     await dbService.insertWord(newWord.toMap());
     _loadWords();
   }
