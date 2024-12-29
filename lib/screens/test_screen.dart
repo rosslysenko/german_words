@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import '../services/database_service.dart';
 import '../models/word.dart';
+import '../widgets/test_option.dart';
 
 class TestScreen extends StatefulWidget {
   @override
@@ -96,21 +97,13 @@ class _TestScreenState extends State<TestScreen> {
                 SizedBox(height: 32),
                 ..._options.map((option) {
                   final isSelected = option == _selectedAnswer;
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                    child: ElevatedButton(
-                      onPressed: _selectedAnswer == null
-                          ? () => _checkAnswer(option)
-                          : null,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: isSelected
-                            ? (_isCorrect
-                                ? Colors.green
-                                : Colors.red)
-                            : null,
-                      ),
-                      child: Text(option),
-                    ),
+                  return TestOption(
+                    option: option,
+                    isSelected: isSelected,
+                    isCorrect: _isCorrect,
+                    onSelect: _selectedAnswer == null
+                        ? () => _checkAnswer(option)
+                        : () {},
                   );
                 }).toList(),
                 SizedBox(height: 32),
