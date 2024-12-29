@@ -3,6 +3,8 @@ import '../services/database_service.dart';
 import '../models/word.dart';
 
 class ProgressScreen extends StatefulWidget {
+  const ProgressScreen({super.key});
+
   @override
   _ProgressScreenState createState() => _ProgressScreenState();
 }
@@ -38,39 +40,39 @@ class _ProgressScreenState extends State<ProgressScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Progress'),
+        title: const Text('Progress'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Your learning progress',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             Text(
               'Total words: $_totalWords',
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               'Learned: $_learnedWords',
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             LinearProgressIndicator(
               value: progress,
               backgroundColor: Colors.grey[300],
               color: Colors.blue,
               minHeight: 20,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               '${(progress * 100).toStringAsFixed(1)}% complete',
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
           ],
         ),

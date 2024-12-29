@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Lerning German')),
+      appBar: AppBar(title: const Text('Lerning German')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/words'),
-              child: Text('New words'),
+              child: const Text('New words'),
             ),
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/test'),
-              child: Text('Test'),
+              child: const Text('Test'),
             ),
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/progress'),
-              child: Text('Progress'),
+              child: const Text('Progress'),
             ),
           ],
         ),

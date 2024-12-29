@@ -5,6 +5,8 @@ import '../models/word.dart';
 import '../widgets/test_option.dart';
 
 class TestScreen extends StatefulWidget {
+  const TestScreen({super.key});
+
   @override
   _TestScreenState createState() => _TestScreenState();
 }
@@ -78,23 +80,23 @@ class _TestScreenState extends State<TestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Test'),
+        title: const Text('Test'),
       ),
       body: _currentWord == null
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'What is the translation of the word:',
                   style: TextStyle(fontSize: 20),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Text(
                   _currentWord!.german,
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 ..._options.map((option) {
                   final isSelected = option == _selectedAnswer;
                   return TestOption(
@@ -105,12 +107,12 @@ class _TestScreenState extends State<TestScreen> {
                         ? () => _checkAnswer(option)
                         : () {},
                   );
-                }).toList(),
-                SizedBox(height: 32),
+                }),
+                const SizedBox(height: 32),
                 if (_selectedAnswer != null)
                   ElevatedButton(
                     onPressed: _nextQuestion,
-                    child: Text('Next question'),
+                    child: const Text('Next question'),
                   ),
               ],
             ),

@@ -6,7 +6,7 @@ class TestOption extends StatelessWidget {
   final bool isCorrect;
   final VoidCallback onSelect;
 
-  TestOption({
+  const TestOption({super.key, 
     required this.option,
     required this.isSelected,
     required this.isCorrect,

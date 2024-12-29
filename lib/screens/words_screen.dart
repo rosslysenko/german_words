@@ -4,6 +4,8 @@ import '../models/word.dart';
 import '../widgets/word_card.dart';
 
 class WordsScreen extends StatefulWidget {
+  const WordsScreen({super.key});
+
   @override
   _WordsScreenState createState() => _WordsScreenState();
 }
@@ -35,10 +37,10 @@ class _WordsScreenState extends State<WordsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Word list'),
+        title: const Text('Word list'),
       ),
       body: _words.isEmpty
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
               itemCount: _words.length,
               itemBuilder: (context, index) {
@@ -47,7 +49,7 @@ class _WordsScreenState extends State<WordsScreen> {
             ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _addWord(),
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
